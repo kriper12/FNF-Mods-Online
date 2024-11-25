@@ -1,53 +1,978 @@
-<html>
-	<div class="header">
-  <h1>Carson's Friday Night Funkin Mods</h1>
-</div>
-	<style>
-body {
-  background-image: url('bg.png');
-} 
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Kriper's FNF Mod Library</title>
+<style>
+  body {
+            color: #ededed;
+            background-color: #000;
+            border: none;
+            margin: 0;
+            font-family: Roboto, sans-serif;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            font-family: Roboto, sans-serif;
+            line-height: 1.167em
+        }
+
+        h1,
+        h1 a,
+        h1 a:visited {
+            color: #f4f4f4;
+        }
+
+        h2 {
+            color: #f4f4f4;
+            line-height: 1em;
+        }
+
+    
+	header {
+		height: 60px;
+	}
+
+
+        p {
+            line-height: 1.8em;
+        }
+
+        .boxInner2,
+        .boxInner3 {
+            height: 208px;
+            width: 180px;
+            background: #2a2a2a;
+            color: #fff;
+        }
+
+        .boxInner2 a,
+        .boxInner3 a {
+            color: #626262
+        }
+
+        .boxInner,
+        .boxInner2,
+        .boxInner3 {
+            margin: 4px 20px 12px;
+			border-radius: 10px;
+            position: relative;
+        }
+
+        .boxInner3 img {
+            border-radius: 5px;
+        }
+
+        .titleBox {
+            bottom: 0;
+            width: 170px;
+            background-color: #1e1e1e;
+            border-radius: 0 0 10px 10px;
+            font: 15px 'Lucida Sans', sans-serif;
+            padding: 5px;
+            overflow: hidden;
+            position: absolute;
+            color: #eee;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ededed;
+        }
+
+        .morelinks a {
+            font-weight: 600;
+            font-size: 15px !important;
+        }
+
+        #items li,
+        .navlink,
+        .navlink a,
+        ul.tabs li {
+            display: inline-block
+        }
+
+        .logo {
+            padding: 15px;
+        }
+
+        .logo a {
+            font-size: 20px;
+            color: #ffc600;
+            font-weight: 700;
+        }
+
+        ::placeholder {
+            color: #cbcbcb;
+        }
+
+        #content {
+            text-align: center;
+            background: #000;
+        }
+
+        ol,
+        ul {
+            padding: 0;
+        }
+		
+		.favorite{
+		    font-size: 30px;
+			padding-right: 10px;
+		
+		}
+     .boxInner2 img {
+                border-radius: 10px 10px 0 0;
+        }
+
+
+select#order-select {
+    font-size: large;
+    background: #2a2a2a;
+    border: 1px solid #666;
+    width: px;
+    width: 200px;
+    color: #fff;
+}
+#items {
+    padding-bottom: 15px;
+    margin: 10px;
+}
+
+.page-title {
+    clear: both;
+    display: inline;
+    padding-right: 40px
+}
+#sortby {
+	display: inline-flex;
+    padding: 10px;
+    border-radius: 10px;
+    background: #181818;
+	color: #ffffff;
+    font-size: 20px;
+}
+div#taginfo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.filter, #taginfo p, div#taginfo h1 {
+margin:0px;
+color:#c8c8c8;
+}
+ul.filter {
+    display: -webkit-inline-box;
+    list-style: none
+}
+
+ul.filter li.active {
+	border: 1px solid #03A9F4;
+}
+ul.filter li a {
+    color: white;
+}
+.sb h3 {
+    text-align: left;
+	color: #fff;
+}
+ul.filter li {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tagwrap {
+		display: grid;
+	grid-column-gap: 25px;
+    grid-row-gap: 25px;
+	padding: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(185px, 1fr) ) ;
+		   grid-template-rows: auto [last];
+		color: #444;
+		grid-auto-flow:dense;
+	}
+.topa{
+  grid-column: 1/-1;
+}
+.sb a {
+    color: #fff;
+}
+.sb ul {
+    text-align: left;
+}
+.sb li {
+    padding: 5px 0px;
+}
+.sb{
+	grid-column:1;
+     grid-row: 4/ span 7;
+      padding: 0 5px;
+}
+.s {
+	grid-column: -3 / span 2;
+    grid-row: 3/span 2;
+    width: 360px;
+	    margin: auto;
+}
+.s2 {
+	grid-column: -2;
+    grid-row: 7/span 3;
+    width: 185px;
+	    margin: auto;
+}
+.s3 {
+	grid-column: -3 / span 2;
+    grid-row: 4/span 2;
+    width: 360px;
+	    margin: auto;
+}
+
+.box a {
+    color: #626262;
+    text-decoration: none;
+}
+.box img {
+    border-radius: 10px 10px 0 0;
+}
+	.box {
+	border-radius: 10px;
+    background-color: #393939;
+    width: 180px;
+    height: 205px;
+	color: #eee;
+    position: relative;
+	margin:auto;
+	}
+
+.tbar{
+  grid-column: 1/-1;
+}
+.tbar2{
+  grid-column: 2/-2;
+  grid-row: 4;
+}
+
+.tb {
+	bottom: 0;
+    width: 170px;
+	color: #eee;
+    background-color: #2d2d2d;
+    font: 15px 'Lucida Sans',sans-serif;
+    padding: 5px;
+    position: absolute;
+	border-radius: 0 0 10px 10px;
+}
+@media screen and (max-width: 1366px){
+	.tagwrap {
+		grid-column-gap: 2px;
+		grid-row-gap: 15px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+   .align-right {
+            float: right;
+        }
+
+        #mySidebar {
+            height: 100%;
+            width: 180px;
+            background: #000;
+            position: fixed !important;
+            overflow: hidden;
+            z-index: 999999;
+        }
+
+        #mySidebar:hover {
+            overflow: auto;
+        }
+
+        a.sidebar-bar-item {
+            display: block;
+            padding: 5px;
+            color: #ddd !important;
+            text-decoration: none;
+        }
+
+        a.sidebar-bar-item:hover {
+            background: #19273b;
+            text-decoration: none;
+        }
+
+        #mySidebar::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        #mySidebar::-webkit-scrollbar-thumb {
+            background: rgba(168, 168, 168, 0.8);
+        }
+
+        #searchform input[type="text"] {
+          border-radius: 2px;
+    width: 50%;
+    font-size: 18px;
+    height: 10px;
+    color: #ededed;
+    background-color: #000;
+    border: 1px solid #4b4b4b;
+    padding: 10px;
+        }
+
+        .navlink button {
+            margin: 0 10px;
+            color: #ededed;
+            background-color: #575757;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: x-large;
+            width: 55px;
+            display: none
+        }
+
+        .navlink button:focus {
+            outline: 0;
+        }
+
+
+        button.btn.btn-primary {
+              border-radius: 0px;
+				font-size: 16px;
+				height: 33px;
+				border: 0px solid #000;
+				background-color: #181818;
+				padding: 0 15px 0 15px;
+
+        }
+
+.searchbutton{
+	color: #fff;
+    border: 1px solid #645b5b;
+    background-color: #181818;
+    font-size: 30px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+        #info-box h3 {
+            padding: 20px 0 0;
+            margin: 0 0 20px;
+        }
+
+        .searchbar {
+       
+            width: 70%;
+        }
+
+        @media only screen and (max-width: 480px) {
+            #back-to-top,
+            .login {
+                display: none;
+            }
+            #how-to p,
+            #description p {
+                max-width: 100%;
+            }
+            #searchform input[type="text"] {
+                width: 155px;
+            }
+            .searchbar {
+                width: 0%;
+                padding: 0px
+            }
+            #info-box .align-right {
+                float: none;
+            }
+            #how-to,
+            #description {
+                max-width: 100%;
+            }
+            body {
+                overflow: hidden;
+            }
+            #extra-desc {
+                padding: 15px !important;
+            }
+            #topnav {
+                height: 60px;
+                padding: 10px;
+            }
+            #mySidebar {
+                overflow-y: auto;
+            }
+            .tagwrap {
+                padding: 1px
+            }
+            .s2,
+            .s,
+            .as,
+			.as2,
+            .rr {
+                display: none;
+            }
+			
+	
+
+        }
+
+        .rr {
+            margin: auto;
+            float: right;
+            padding: 10px;
+        }
+
+        @media (max-width:850px) and (min-width:481px) {
+            #searchform input[type="text"] {
+                width: 77%;
+            }
+            .searchbar {
+                width: 70%;
+                padding: 15px 0 0 7%;
+            }
+            #extra-desc {
+                padding: 20px;
+            }
+            #mySidebar {
+                overflow-y: auto;
+            }
+        }
+
+     @media screen and (max-width: 950px) {
+            #mySidebar {
+                display: none;
+            }
+            #topnav {
+                margin-left: 0
+            }
+            #content {
+                margin-left: 0
+            }
+            .navlink button {
+                display: block;
+            }
+			
+
+        }
+
+
+		
+		   @media screen and (min-width: 1125px){
+		.icon-search{ display:none;}
+		}
+		
+
+		
+    @media screen and (max-width: 1125px){
+		.searchbar{ display:none;}
+		.sub-menu ul li {
+			margin:0px;
+		}
+				
+				
+		.favorite{
+		 position: absolute;
+		padding-top:5px;
+		  right: 125px;
+		}
+		
+			
+		
+		button.openBtn{
+    width: 50px;
+    margin: -1px;
+    position: absolute;
+    margin: 10px;
+    right: 50px;
+    border: 0px;
+    background: #181818;
+	
+	}
+		}
+		
+		
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9); /* Black with a little bit see-through */
+}
+
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+
+.overlay .closebtn {
+  position: absolute;
+  top: 50px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 75%;
+  background: white;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+
+.overlay button {
+  float: left;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
+		
+		
+
+.icon-search{
+color: #fff;
+    font-size: 24px;
+	}
+		
+		
+		
+
+		
+		
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/wp-content/themes/v1/css/fonts/comoon.eot?38kjjm');
+  src:  url('/wp-content/themes/v1/css/fonts/icomoon.eot?38kjjm#iefix') format('embedded-opentype'),
+    url('/wp-content/themes/v1/css/fonts/icomoon.ttf?38kjjm') format('truetype'),
+    url('/wp-content/themes/v1/css/fonts/icomoon.woff?38kjjm') format('woff'),
+    url('/wp-content/themes/v1/css/fonts/icomoon.svg?38kjjm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bars:before {
+  content: "\e900";
+}
+.icon-search:before {
+  content: "\e986";
+}
+
+.icon-heart:before {
+  content: "\e9da";
+}
+.navbar{
+    background: #181818;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 9995;
+}
+.brand-and-icon{
+    display: flex;
+    justify-content: space-between;
+  padding-bottom: 10px;
+    border-bottom: 1px solid #4c4c4c
+}
+.navbar-brand{
+    color: #fbb12b;
+    font-size: 1.3rem;
+    width: 150px;
+    padding: 10px 0 0 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+.navbar-toggler{
+   
+    background: transparent;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #FFF;
+    padding: 0.2rem 0.5rem;
+    transition: all 0.4s ease;
+    border: 2px solid #ababab;
+    border-radius: 4px;
+}
+.navbar-toggler:hover{
+    opacity: 0.7;
+}
+.navbar-collapse{
+    overflow-y: scroll;
+    display: none;
+}
+.navbar-nav > li > a{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
+    padding: 0.6rem 0 0 0.6rem;
+    margin: 0.2rem 0;
+    border-bottom: 1px solid #2c2c2c;
+    border-radius: 1px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+.drop-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.navbar-nav > li > a:hover{
+    opacity: 0.7;
+}
+.sub-menu h4{
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+}
+.sub-menu ul li{
+    text-transform: capitalize;
+  
+	list-style: none;
+    width: 200px;
+    font-size: 0.95rem;
+}
+.sub-menu ul li a:hover{
+    opacity: 0.9;
+}
+.sub-menu{
+    display: none;
+}
+
+@media screen and (min-width: 992px){
+
+    .navbar{
+	
+        flex-direction: row;
+		align-items: center;
+		position: fixed;
+		border: 1px solid;
+		border-color: #525252;
+    }
+    .navbar-toggler{
+        display: none;
+    }
+    .brand-and-icon{
+
+        border-bottom: none;
+        padding: 0;
+    }
+    .navbar-collapse{
+        display: block!important;
+        overflow-y: hidden;
+        flex: 1 0 auto;
+    }
+    .navbar-nav{
+        display: flex;
+		margin:0px;
+ 
+    }
+    .navbar-nav > li > a{
+          border-bottom: none;
+		margin: 0 0.4rem;
+		padding: 1.7rem 0.5rem 1rem 0.5rem;
+		font-size: 0.8rem;
+    }
+
+	
+    .sub-menu{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 100%;
+        background: #323232;
+    }
+    .navbar-nav > li:hover .sub-menu{
+        display: grid!important;
+        grid-template-columns: repeat(4, 1fr);
+		padding: 10px 0 10px 0px;
+    
+    }
+	
+
+    .navbar-nav > li{
+		    list-style-type: none;
+    }
+    .navbar-nav > li:hover{
+        border-bottom-color: #000;
+    }
+    .sub-menu-item{
+           padding-left: 15%;
+    }
+
+	.openBtn{
+	background: #181818;
+    border: 0;
+	}
+	}
+	
+	
+
+
+
+
 </style>
-	<title>Carson's Mods</title>	
-	<a href="https://funkymods.github.io/shaggymatt" target="_blank" style="color: green">shaggy x matt</a>
-	<a href="https://funkymods.github.io/Corruption" target="_blank" style="color: purple">corruption</a>
-	<a href="https://funkymods.github.io/Miku" target="_blank" style="color: pink">Miku</a>
-	<a href="https://funkymods.github.io/XE" target="_blank" style="color: yellow">vs XE</a>
-	<a href="https://funkymods.github.io/ann" target="_blank" style="color: green">ann</a>
-	<a href="https://funkymods.github.io/bsides" target="_blank" style="color: yellow">bsides</a>
-	<a href="https://funkymods.github.io/deepseadate" target="_blank" style="color: blue">deep sea date</a>
-	<a href="https://funkymods.github.io/everywhereattheendoffunk" target="_blank" style="color: gray">EATEOF</a>
-	<a href="https://funkymods.github.io/flipside" target="_blank" style="color: red">FlipSide</a>
-	<a href="https://funkymods.github.io/h3llbeats" target="_blank" style="color: red">Heck beats</a>
-	<a href="https://funkymods.github.io/henry" target="_blank" style="font-size: px; style="color: orange">vs Henry Stickmin</a>
-	<a href="https://funkymods.github.io/hex" target="_blank" style="color: blue">vs Hex</a>
-	<a href="https://funkymods.github.io/kapi" target="_blank" style="color: gray">vs kapi (old)</a>
-	<a href="https://funkymods.github.io/matt" target="_blank" style="color: orange">vs Matt (first 2 weeks)</a>
-	<a href="https://funkymods.github.io/minus" target="_blank" style="color: yellow">Friday Night Funkin:Minus</a>
-	<a href="https://funkymods.github.io/monika" target="_blank" style="color: pink">vs Monika Full Week</a>
-	<a href="https://funkymods.github.io/neo" target="_blank" style="color: purple">FNF Neo (old)</a>
-	<a href="https://funkymods.github.io/rosecriminal" target="_blank" style="color: brown">Michael Jackson's Smooth Criminal over "Roses"</a>
-	<a href="https://funkymods.github.io/saltyssundaynight" target="_blank" style="color: gray">Salty's Sunday Night</a>
-	<a href="https://funkymods.github.io/shaggy" target="_blank" style="color: green">vs Shaggy (old)</a>
-	<a href="https://funkymods.github.io/shaggyhd" target="_blank" style="color: green">vs Shaggy HD</a>
-	<a href="https://funkymods.github.io/smokeemoutstruggle" target="_blank" style="color: green">vs Garcello</a>
-	<a href="https://funkymods.github.io/starcatcher" target="_blank" style="color: pink">Star Catcher</a>
-	<a href="https://funkymods.github.io/sussy2" target="_blank" style="color: red">vs Impostor 2.0</a>
-	<a href="https://funkymods.github.io/tabi" target="_blank" style="color: yellow">vs Ex</a>
-	<a href="https://funkymods.github.io/tord" target="_blank" style="color: red">vs tord</a>
-	<a href="https://funkymods.github.io/touhou" target="_blank" style="color: orange">Touhou</a>
-	<a href="https://funkymods.github.io/upside" target="_blank" style="color: pink">FNF Upside</a>
-	<a href="https://funkymods.github.io/void" target="_blank" style="color: purple">vs Void</a>
-	<a href="https://funkymods.github.io/vschara" target="_blank" style="color: red">vs Chara</a>
-	<a href="https://funkymods.github.io/week6" target="_blank" style="color: pink">Week 6</a>
-	<a href="https://funkymods.github.io/week7" target="_blank" style="color: yellow">Week 7</a>
-	<a href="https://funkymods.github.io/whitman" target="_blank" style="color: orange">vs Whitty</a>
-	<a href="https://funkymods.github.io/x-sides" target="_blank" style="color: black">X Sides</a>
-	<a href="https://funkymods.github.io/xevent" target="_blank" style="color: white">X event</a>
-	<a href="https://funkymods.github.io/zardy" target="_blank" style="color: brown">vs Zardy (old)</a>
-        <a href="https://funkymods.github.io/tricky" target="_blank" style="color: red">Tricky FULL WEEK</a>											    
-        <a href="https://funkymods.github.io" target="_blank" style="color: green">Impostor V3</a>												    
-	<a href="https://carsonharrell.github.io/dusttale" target="_blank" style="color: green">Dust Tale</a>										    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEU2Njb/xgCuih97ZSvZqg9LQzNcUDFsWy6JbyiWeSW5kxvEmxfjsQr2wAPPohPtuQYI+9kBAAAAVUlEQVR42mNgwA3SWQsgDBWem4JyjApODCqKzcILE4EMfTlmYUXGzYcYFEWYBUUCBYUYFBcaCzc2AkVUYjcLN04EKeaSFJQNBDLSWc2NTZkTyhiIAADOyRDIUV4GggAAAABJRU5ErkJggg==">
+<meta name="robots" content="max-image-preview:large">
+<meta name="description" content="Collection of Friday Night Funkin online Games for you to play."><link rel="canonical" href="https://kbhgames.com/tag/friday-night-funkin"><link rel="next" href="https://kbhgames.com/tag/friday-night-funkin/page/2">
 	
+	 
+	 	 
+	 
+	 	 <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SRHSFW2NJT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SRHSFW2NJT');
+</script>
+
+	 
+
+</head>
+<body>
+<header>  
+	     <nav class="navbar">
+        <div class="brand-and-icon">
+          <a href="../" class="navbar-brand">Kripers FNF Mod Library</a>
+          
+        </div>
+
+        <div class="navbar-collapse">
+          
+        </div>
+	    
+			      
+				
+				
+      </nav>
+	  
+</header>
+
+
+
+
+
+
+
+
+<div id="content">
+
+
+
+
+<div class="tagwrap" itemscope="" itemtype="https://schema.org/ItemList">
+<meta itemprop="numberOfItems" content="2937">
+   <div class="tbar">
+			<div id="taginfo">
+							<h1>Menu</h1> 
+										
+						</div>
+	</div>
 	
+						
+									
+					
+										
+										
+					
+										
+				
+<div class="box a" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem https://schema.org/Game"><meta itemprop="position" content="1"><a itemprop="url" href="https://kbhgames.com/game/friday-night-funkin" title="Friday Night Funkin’"><img class="lazy loaded" src="https://kbhgames.com/wp-content/uploads/2020/11/Friday-Night-Funkin.png" data-src="https://kbhgames.com/wp-content/uploads/2020/11/Friday-Night-Funkin.png" alt="Friday Night Funkin’" width="180" height="180" data-ll-status="loaded"><div class="tb">Friday Night Funkin’</div></a></div>  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</div>
+
+
+
+
+
+
+	 
+	 <footer>
+        <div class="bar">
+            <div class="bar-wrap">
+                <ul class="links">
+                    <li><a href="../">KFNFML</a></li>
+					
+					
+                    
+                </ul>
+
+                <div class="clear"></div>
+
+            </div>
+        </div>
+		</footer>
+		</div>
+<script src="//kbhgames.com/wp-content/themes/v1/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+	var relevanssi_rt_regex = /(&|\?)_(rt|rt_nonce)=(\w+)/g
+	var newUrl = window.location.search.replace(relevanssi_rt_regex, '')
+	history.replaceState(null, null, window.location.pathname + newUrl + window.location.hash)
+	</script>
 	
-</html>    
+
+
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+	
+<script defer="" src="//kbhgames.com/wp-content/themes/v1/js/bottom-all.js?v=33dss4"></script>
+ <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+  <div class="overlay-content">
+    <form action="https://kbhgames.com/">
+      <input type="text" placeholder="Search.." name="s">
+      <button type="submit"><span class="icon-search"></span></button>
+    </form>
+  </div>
+</div>
+
+<div id="modal-login" class="ml-modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+
+<iframe allow="join-ad-interest-group" data-tagging-id="G-SRHSFW2NJT" data-load-time="1732578181421" height="0" width="0" src="https://td.doubleclick.net/td/ga/rul?tid=G-SRHSFW2NJT&amp;gacid=1883560675.1732578181&amp;gtm=45je4bk0v893214933za200&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;pscdl=noapi&amp;aip=1&amp;fledge=1&amp;frm=0&amp;tag_exp=101925629~102067555~102067808~102077855~102081485&amp;z=2069317417" style="display: none; visibility: hidden;"></iframe><div>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</div></body></html>
